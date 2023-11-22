@@ -7,24 +7,22 @@ const app = express();
 const port = 2023
 import comedores from "./routes/comedores.mjs";
 
+
 app.get('/', (req, res) => {
     res.send('Let\'s see!');
 });
 
-app.get('/comedores', (req, res) => {
-    res.send('Xatruches');
-});
-
-
-
+//console.log(comedores)
 //middleware
 app.use(express.json()) //this allows is to use req.body
 app.use('/comedores', comedores)
 //error handeling middleware
-app.use((err, req, res, next) => {
-    res.status(500).send("Ay joder! An unexpected error occured.");
-})
+// app.use((err, req, res, next) => {
+//     res.status(500).send("Ay joder! An unexpected error occured.");
+// })
+
+
 
 app.listen(port, () => {
-    console.log(`server is listening on port: ${port}`)
+    console.log(`Yay!, server is listening on port: ${port}`)
 })

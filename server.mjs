@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
 app.use(express.json()) //this allows is to use req.body
 app.use('/comedores', comedores)
 //error handeling middleware
-// app.use((err, req, res, next) => {
-//     res.status(500).send("Ay joder! An unexpected error occured.");
-// })
+app.use((err, req, res, next) => {
+    res.status(500).send("Ay joder! An unexpected error occured.");
+})
 
 
 
